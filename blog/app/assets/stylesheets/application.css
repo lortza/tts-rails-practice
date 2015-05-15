@@ -18,9 +18,21 @@
  *= require font-awesome
  */
 
-html, body {
-  height: 100%;
+.featuredimage_post {
+  margin: 0 auto;
+  width: 400px;
+  height: 300px;
 }
+
+.featuredimage_post img{
+  width: 100%;
+}
+
+.featuredimage_index {
+  width: 100px;
+}
+
+
 
  footer {
   text-align: center;
