@@ -17,8 +17,9 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @dog.owner %>
+  <%= @dog.owner.name %>
 </p>
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
+<%= link_to 'Back', dogs_path %> | <%= link_to 'New Dog', new_dog_path %>
+
