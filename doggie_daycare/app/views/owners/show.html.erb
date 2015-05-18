@@ -1,14 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+
+<!--show all dogs owned my the person-->  
 <p>
-  <strong>Name:</strong>
-  <%= @owner.name %>
+  <strong><%= @owner.name.capitalize %> is the Guardian of:</strong>
+  <ul>
+  <% @owner.dogs.order("name").each do |x| %>
+  <li> <%= x.name %> </li>
+  <% end %>
+  </ul>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong><%= @owner.name.capitalize %>'s Phone:</strong>
   <%= @owner.phone %>
 </p>
 
-<%= link_to 'Edit', edit_owner_path(@owner) %> |
-<%= link_to 'Back', owners_path %>
+<%= link_to 'Edit', edit_owner_path(@owner), class: "btn btn-default btn-xs" %> |
+<%= link_to 'Back', owners_path, class: "btn btn-default btn-xs" %> | <%= link_to 'New Guardian', new_owner_path, class: "btn btn-default btn-xs" %>
+

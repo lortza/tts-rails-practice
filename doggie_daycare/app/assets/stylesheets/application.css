@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  margin-top: 30px;
+ }
+
+ .welcomeimage {
+  padding: 2%;
+  background-image: url("http://pixabay.com/get/acd6f24a9a625a852327/1431977632/pug-690566.jpg");
+  background-size: 100%;
+  min-height: 300px;
+ }
