@@ -1,14 +1,26 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @artist.genre %>
-</p>
-
+<!-- shows artist name instead of ID number
 <p>
   <strong>Name:</strong>
   <%= @artist.name %>
+</p>-->
+
+<!--show all songs for an artist in the artist show view.-->  
+<p>
+  <strong>All Songs for <%= @artist.name.capitalize %> (<%= @artist.genre.name %>):</strong>
+  <ul>
+  <% @artist.songs.order("name").each do |x| %>
+  <li> <%= x.name %> </li>
+  <% end %>
+  </ul>
 </p>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<p>
+  <strong>Genre:</strong>
+  <%= @artist.genre.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_artist_path(@artist), class: "btn btn-default btn-xs"%> |
+<%= link_to 'Back', artists_path, class: "btn btn-default btn-xs" %> | <%= link_to 'Add Artist', new_artist_path, class: "btn btn-default btn-xs" %>
+

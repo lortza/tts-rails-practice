@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Genres</h1>
+<h1>Music Genres</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,9 +14,9 @@
     <% @genres.each do |genre| %>
       <tr>
         <td><%= genre.name %></td>
-        <td><%= link_to 'Show', genre %></td>
-        <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
-        <td><%= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', genre, class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_genre_path(genre), class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Genre', new_genre_path %>
+<%= link_to 'New Genre', new_genre_path, class: "btn btn-default" %>
