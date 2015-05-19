@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, class: "form-control", placeholder: "ex: 555-555-5555" %>
   </div>
   <div class="actions">
     <%= f.submit %>
