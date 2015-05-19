@@ -22,9 +22,9 @@
         <td><%= dog.breed %></td>
         <td><%= dog.age %></td>
         <td><%= dog.owner.name %></td>
-        <td><%= link_to 'Show', dog, class: "btn btn-default btn-xs" %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog), class: "btn btn-default btn-xs" %></td>
-        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Show', dog, class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_dog_path(dog), class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Dog', new_dog_path, class: "btn btn-default" %>
+<%= link_to 'New Dog', new_dog_path, class: "btn btn-primary" %>
