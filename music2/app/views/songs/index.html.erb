@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Songs</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Song Title</th>
+      <th>Artist (Genre)</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @songs.order("name").each do |song| %>
+      <tr>
+        <td><%= song.name %></td>
+        <td><%= song.artist.name %> (<%= song.artist.genre.name %>) </td>
+        <td><%= link_to 'Show', song %></td>
+        <td><%= link_to 'Edit', edit_song_path(song) %></td>
+        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Song', new_song_path, class: "btn btn-default" %>
