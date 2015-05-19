@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :artist_id %><br>
-    <%= f.collection_select :artist_id, Artist.all, :id, :name %>
+    <%= f.collection_select :artist_id, Artist.all.order("name"), :id, :name, {prompt: "Select an Artist"}, {class: "form-control"} %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Love in an Elevator" %>
   </div>
   <div class="actions">
     <%= f.submit %>
