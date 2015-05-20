@@ -44,9 +44,11 @@ gem "awesome_print"
 # annotate models with or schema
 gem "annotate"
 
+
 group :development do
-  #quiet those assets down
-  gem "quiet_assets"
+  gem "quiet_assets" # quiet those assets down
+  gem "faker" # faker data
+  gem "populator" # 
 end
 
 group :development, :test do
