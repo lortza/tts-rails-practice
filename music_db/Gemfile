@@ -47,6 +47,8 @@ gem "annotate"
 group :development do
   #quiet those assets down
   gem "quiet_assets"
+  gem "faker" #https://github.com/stympy/faker
+  gem "populator" #https://github.com/ryanb/populator
 end
 
 group :development, :test do
