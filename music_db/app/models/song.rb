@@ -10,8 +10,6 @@ class Song < ActiveRecord::Base
 
 #creating a scope with things created today
   scope :today, -> {where("DATE(created_at) = ?", Date.today)}
-
-
 end
 
 # == Schema Information
