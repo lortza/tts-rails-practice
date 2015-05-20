@@ -48,7 +48,7 @@ gem "annotate"
 group :development do
   gem "quiet_assets" # quiet those assets down
   gem "faker" # faker data
-  gem "populator" # 
+  gem "populator" # allows mass population of users
 end
 
 group :development, :test do
