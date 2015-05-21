@@ -7,7 +7,6 @@ namespace :db do
 
     DOG_NAMES = ["Rupert", "Miko", "Lara", "Mara", "Lulu", "Frankie", "Spot", "Rover", "Nina", "Hemi"]
 
-
     # destroys all existing data
     [Owner, Dog].each(&:destroy_all)
 
@@ -24,7 +23,5 @@ namespace :db do
         y.age = rand(0..20)
       end # Dog
     end # each Owner
-
   end # task
-
 end # namespace
