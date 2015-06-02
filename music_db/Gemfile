@@ -44,6 +44,9 @@ gem "awesome_print"
 # annotate models with or schema
 gem "annotate"
 
+#user management
+gem "devise"
+
 group :development do
   gem "quiet_assets" #quiet those assets down
   gem "faker" #https://github.com/stympy/faker
