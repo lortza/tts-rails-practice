@@ -2,6 +2,31 @@
 
 <h1>Songs</h1>
 
+
+<div class="row">
+  <div class="col-sm-3">
+
+    <% @songs.each do |song| %>
+      <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= song.name %></h3>
+      </div><!--panel-title-->
+      <div class="panel-body">
+        Image Goes Here
+      </div><!--panel-body-->
+      <div class="panel-footer"><%= song.artist.name %> (<%= song.artist.genre.name %>)
+      <%= link_to 'Show', song, class: "btn btn-default btn-xs" %>
+      <%= link_to 'Edit', edit_song_path(song), class: "btn btn-default btn-xs" %>
+        <%= link_to ' Delete', song, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs fa fa-trash" %>
+      </div><!--panel-footer-->
+    </div><!--panel panel-default-->
+    <% end %><!--ends @songs each do-->
+
+  </div><!--col-sm-3-->
+</div><!--row-->
+
+
+
 <table class ="table">
   <thead>
     <tr>
@@ -14,6 +39,7 @@
   <tbody>
     <% @songs.each do |song| %>
       <tr>
+
         <td><%= song.artist.name %> (<%= song.artist.genre.name %>)</td>
         <td><%= song.name %></td>
         <td><%= link_to 'Show', song, class: "btn btn-default btn-xs" %></td>
