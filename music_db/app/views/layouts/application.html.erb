@@ -46,7 +46,7 @@
         <ul class="nav navbar-nav">
             <!--User Login box-->
             <% if user_signed_in? %>
-            <%= current_user.email %>
+            <%= current_user.email class: "pull-right" %>
             <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             <% else %>
             <li><%= link_to "Sign In", user_session_path %></li>
