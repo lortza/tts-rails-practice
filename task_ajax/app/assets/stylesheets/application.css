@@ -30,4 +30,12 @@
 
 .well .task a:hover {
   text-decoration: line-through;
+  background-color: transparent;
+  color: red;
+}
+
+.due-date {
+  font-size: 80%;
+  font-style: italic;
+  margin-right: 1em;
 }
