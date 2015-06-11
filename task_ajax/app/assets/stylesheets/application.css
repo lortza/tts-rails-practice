@@ -19,3 +19,15 @@
  #task-form {
   display: none;
  }
+
+ .row {
+  margin-top: 30px;
+ }
+
+ a:hover {
+  text-decoration: none;
+}
+
+.well .task a:hover {
+  text-decoration: line-through;
+}

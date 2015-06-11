@@ -1,10 +1,19 @@
-<h1>Tasks</h1>
-<%= link_to 'New User task', new_user_task_path, remote: true %>
+<div class="row">
 
-<div id="task-form"></div>
+  <div class="col-sm-4">
+      <h1>Tasks</h1>
+      
+    <%= link_to new_user_task_path, remote: true do %>
+      <button class="btn btn-default add-task"><%= fa_icon "plus" %> Add Task</button>
+    <% end %>
+    <div id="task-form"></div>
+  </div><!--col-sm-4-->
 
-<div id="tasks">
- <ul>
-   <%= render @user_tasks %>
- </ul>
-</div>
+  <div class="col-sm-8">
+
+    <div id="tasks">
+      <%= render @user_tasks %>
+    </div><!--tasks-->
+  </div><!--col-sm-8-->
+
+</div>  <!-- row -->

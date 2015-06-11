@@ -1,5 +1,15 @@
-<li>
-  <%= user_task.description %>
-  <%= user_task.due %>
-  <%= link_to "Edit", edit_user_task_path(user_task), remote: true %> | <%= link_to "Delete", user_task, remote: true, method: :delete, data: { confirm: 'Are you sure you want to delete this task?'} %>
-</li>
+<div class="well well-sm">
+  <span class="task">
+     <%= user_task.description %>
+  </span>
+  <span class="pull-right">
+    <%= user_task.due.stamp_like("December 31, 1999") %>
+    <%= link_to edit_user_task_path(user_task), remote: true do %>
+      <%= fa_icon 'pencil' %>
+    <% end %><!--task button-->
+
+    <%= link_to user_task, remote: true, method: :delete, data: { confirm: '~ ~ KAPOW! ~ ~ You mean to delete this, yes?'} do %>
+      <%= fa_icon 'trash-o' %>
+    <% end %><!--delete button-->
+  </span>
+</div><!--well-->
