@@ -2,12 +2,15 @@
 <%= simple_form_for(@user_task, remote: true) do |f| %>
  <%= f.error_notification %>
 
- <div class="form-inputs">
-   <%= f.input :description, as: :text, placeholder: "Make groceries" %>
-   <%= f.input :due, as: :string, placeholder: "Today!" %>
- </div>
+<!--TODO: Add error notification with info is missing-->
 
- <div class="form-actions">
-   <%= f.button :submit %>
- </div>
+   <div class="form-inputs">
+     <%= f.input :description, as: :text, placeholder: "Make groceries" %>
+     <%= f.input :due, as: :string, placeholder: "Today!" %>
+   </div>
+
+   <div class="form-actions">
+     <%= f.button :submit %>
+   </div>
+  <!--TODO: Add Cancel button--> 
 <% end %><!-- simple_form_for -->

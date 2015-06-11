@@ -12,7 +12,6 @@ class UserTasksController < ApplicationController
   # POST /user_tasks.json
   def create
     @user_task = UserTask.create(user_task_params)
-    
   end
 
   # PATCH/PUT /user_tasks/1

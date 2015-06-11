@@ -3,6 +3,7 @@
      <%= link_to user_task.description, user_task, remote: true, method: :delete, data: { confirm: '~ ~ KAPOW! ~ ~ You mean to delete this, yes?'} %>
   </span>
   <span class="pull-right">
+
     <span class="due-date"><%= user_task.due.stamp_like("Dec 31, 1999") %></span>
     <%= link_to edit_user_task_path(user_task), remote: true do %>
       <%= fa_icon 'pencil' %>
