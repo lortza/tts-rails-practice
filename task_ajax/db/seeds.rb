@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+UserTask.create(description: "brush the dog", due: "20130118061017")
+UserTask.create(description: "feed the cat", due: "20150118061017")
+UserTask.create(description: "find the hamster", due: "20150118061017")
