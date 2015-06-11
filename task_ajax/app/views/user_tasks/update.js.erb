@@ -1,0 +1,5 @@
+// show all of the user tasks
+$("#tasks").html("<%= j (render @user_tasks) %>");
+
+// get rid of the form
+$("#task-form").slideUp(350)
