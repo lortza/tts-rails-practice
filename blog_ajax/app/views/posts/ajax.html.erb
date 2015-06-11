@@ -1,0 +1,25 @@
+<h1>Ajax Practice Blog</h1>
+
+<!-- Will be replaced by actual posts. First we just put a link to the JS funtion that will do that behavior -->
+<div id="posts">
+  <a href="javascript:loadPosts();">This is where the posts go</a> 
+</div><!--posts-->
+
+<!-- Insert the JS funtion that loads the posts and it's initiated by clicking the hyperlink above. -->
+
+<script type="text/javascript">
+  function loadPosts(){
+    // 1. go grab the JSON data for our posts. Rails actually creates the JSON for us. yay!
+    $.getJSON("/posts.json", function (data) {
+      // Put data in HTML string to make it bold and italic
+      var html_content = "";
+      $.each(data, function (index) {
+        html_content += "<p>" + data[index].content + "</p>";
+      }); // close .each loop
+      // update div with content of var html
+      $("#posts").html(html_content);
+
+    }); // closes .getJSON
+  } //close function loadPosts
+
+</script>
