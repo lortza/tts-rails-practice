@@ -1,5 +1,4 @@
 class UserTask < ActiveRecord::Base
-
-    validates :description, :due, presence: true
+  validates :description, :due, presence: true
 
 end
