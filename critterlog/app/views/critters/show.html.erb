@@ -7,15 +7,9 @@
   <%= @critter.breed %>
 </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @critter.city %>
-</p>
+<p><strong>Lives with:</strong> <%= link_to @critter.guardian.name, @critter.guardian %></p>
 
-<p>
-  <strong>Country: </strong>
-  Coming Soon
-</p>
+<p><strong>Lives in:</strong> <%= @critter.guardian.city %>, <%= link_to @critter.guardian.country.name, @critter.guardian.country %></p>
 
 <p>
   <strong>Hobbies:</strong>
@@ -23,13 +17,8 @@
 </p>
 
 <p>
-  <strong>Guardian:</strong>
-  <%= @critter.guardian %>
-</p>
-
-<p>
   <strong>Photo:</strong>
-  <%= @critter.photo %>
+  <%= @critter.photo_url %>
 </p>
 
 <%= link_to 'Edit', edit_critter_path(@critter) %> |

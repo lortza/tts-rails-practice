@@ -20,20 +20,18 @@
     <%= f.text_field :breed %>
   </div>
   <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
     <%= f.label :hobbies %><br>
     <%= f.text_area :hobbies %>
   </div>
   <div class="field">
-    <%= f.label :guardian %><br>
-    <%= f.text_field :guardian %>
+    <%= f.label :guardian_id %><br>
+    <%= f.collection_select :guardian_id, Guardian.all, :id, :name, :prompt => "Select a Guardian" %>
+    <p><%= link_to 'Create New Guardian', new_guardian_path %></p>
   </div>
   <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.text_field :photo %>
+  NEED TO UPDATE
+    <%= f.label :photo_url %><br>
+    <%= f.text_field :photo_url %>
   </div>
   <div class="actions">
     <%= f.submit %>
