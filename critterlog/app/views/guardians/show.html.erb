@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @guardian.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @guardian.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @guardian.country.name %>
+</p>
+
+<%= link_to 'Edit', edit_guardian_path(@guardian) %> |
+<%= link_to 'Back', guardians_path %>
