@@ -24,10 +24,11 @@ class CrittersController < ApplicationController
   # POST /critters
   # POST /critters.json
   def create
+    puts "critter params: #{critter_params}"
     @critter = Critter.new(critter_params)
 
     respond_to do |format|
-      if @critter.save
+      if @critter.save!
         format.html { redirect_to @critter, notice: 'Critter was successfully created.' }
         format.json { render :show, status: :created, location: @critter }
       else

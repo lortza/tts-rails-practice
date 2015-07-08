@@ -1,0 +1,122 @@
+Searching 199 files for "photo"
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/app/controllers/critters_controller.rb:
+   71      # Never trust parameters from the scary internet, only allow the white list through.
+   72      def critter_params
+   73:       params.require(:critter).permit(:name, :breed, :hobbies, :guardian_id, :photo_url)
+   74      end
+   75  end
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/app/models/critter.rb:
+    1  class Critter < ActiveRecord::Base
+    2    belongs_to :guardian
+    3:   mount_uploader :photo, AvatarUploader
+    4  end
+    5  
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/app/views/critters/_form.html.erb:
+   31    <div class="field">
+   32    NEED TO UPDATE
+   33:     <%= f.label :photo_url %><br>
+   34:     <%= f.text_field :photo_url %>
+   35    </div>
+   36    <div class="actions">
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/app/views/critters/index.html.erb:
+   10        <th>Lives</th>
+   11        <th>Hobbies</th>
+   12:       <th>Photo</th>
+   13        <th colspan="3"></th>
+   14      </tr>
+   ..
+   22          <td>With <%= link_to critter.guardian.name, critter.guardian %> in <%= critter.guardian.city %>, <%= critter.guardian.country.name %></td>
+   23          <td><%= critter.hobbies %></td>
+   24:         <td><%= critter.photo_url %>[PHOTO]</td>
+   25          <td><%= link_to 'Show', critter %></td>
+   26          <td><%= link_to 'Edit', edit_critter_path(critter) %></td>
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/app/views/critters/index.json.jbuilder:
+    1  json.array!(@critters) do |critter|
+    2:   json.extract! critter, :id, :name, :breed, :city, :hobbies, :guardian, :photo
+    3    json.url critter_url(critter, format: :json)
+    4  end
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/app/views/critters/show.html.erb:
+   18  
+   19  <p>
+   20:   <strong>Photo:</strong>
+   21:   <%= @critter.photo_url %>
+   22  </p>
+   23  
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/app/views/critters/show.json.jbuilder:
+    1: json.extract! @critter, :id, :name, :breed, :city, :hobbies, :guardian, :photo, :created_at, :updated_at
+    2  
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/config/routes.rb:
+   49    #   end
+   50    #   resources :posts, concerns: :toggleable
+   51:   #   resources :photos, concerns: :toggleable
+   52  
+   53    # Example resource route within a namespace:
+
+~/Desktop/TTS/rails_practice/critterlog/db/development.sqlite3:
+    <binary>
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/db/schema.rb:
+   27      t.datetime "updated_at",  null: false
+   28      t.integer  "guardian_id"
+   29:     t.string   "photo_url"
+   30    end
+   31  
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/db/migrate/20150515215502_create_critters.rb:
+    7        t.text :hobbies
+    8        t.string :guardian
+    9:       t.string :photo
+   10  
+   11        t.timestamps null: false
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/db/migrate/20150708155846_remove_photo_from_critters.rb:
+    1: class RemovePhotoFromCritters < ActiveRecord::Migration
+    2    def change
+    3:     remove_column :critters, :photo, :string
+    4    end
+    5  end
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/db/migrate/20150708160210_add_photo_url_to_critter.rb:
+    1: class AddPhotoUrlToCritter < ActiveRecord::Migration
+    2    def change
+    3:     add_column :critters, :photo_url, :string
+    4    end
+    5  end
+
+~/Desktop/TTS/rails_practice/critterlog/log/development.log:
+    <binary>
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/test/controllers/critters_controller_test.rb:
+   19    test "should create critter" do
+   20      assert_difference('Critter.count') do
+   21:       post :create, critter: { breed: @critter.breed, city: @critter.city, guardian: @critter.guardian, hobbies: @critter.hobbies, name: @critter.name, photo: @critter.photo }
+   22      end
+   23  
+   ..
+   36  
+   37    test "should update critter" do
+   38:     patch :update, id: @critter, critter: { breed: @critter.breed, city: @critter.city, guardian: @critter.guardian, hobbies: @critter.hobbies, name: @critter.name, photo: @critter.photo }
+   39      assert_redirected_to critter_path(assigns(:critter))
+   40    end
+
+/Users/localflavor/Desktop/TTS/rails_practice/critterlog/test/fixtures/critters.yml:
+    7    hobbies: MyText
+    8    guardian: MyString
+    9:   photo: MyString
+   10  
+   11  two:
+   ..
+   15    hobbies: MyText
+   16    guardian: MyString
+   17:   photo: MyString
+   18  
+
+126 matches across 16 files

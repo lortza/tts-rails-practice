@@ -3,15 +3,13 @@
 one:
   name: MyString
   breed: MyString
-  city: MyString
   hobbies: MyText
   guardian: MyString
-  photo: MyString
+  photo_url: MyString
 
 two:
   name: MyString
   breed: MyString
-  city: MyString
   hobbies: MyText
   guardian: MyString
-  photo: MyString
+  photo_url: MyString

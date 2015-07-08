@@ -21,7 +21,7 @@
         <td><%= critter.breed %></td>
         <td>With <%= link_to critter.guardian.name, critter.guardian %> in <%= critter.guardian.city %>, <%= critter.guardian.country.name %></td>
         <td><%= critter.hobbies %></td>
-        <td>PHOTO</td>
+        <td><%= critter.photo_url %>[PHOTO]</td>
         <td><%= link_to 'Show', critter %></td>
         <td><%= link_to 'Edit', edit_critter_path(critter) %></td>
         <td><%= link_to 'Destroy', critter, method: :delete, data: { confirm: 'Are you sure?' } %></td>

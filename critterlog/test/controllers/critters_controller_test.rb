@@ -18,7 +18,7 @@ class CrittersControllerTest < ActionController::TestCase
 
   test "should create critter" do
     assert_difference('Critter.count') do
-      post :create, critter: { breed: @critter.breed, city: @critter.city, guardian: @critter.guardian, hobbies: @critter.hobbies, name: @critter.name, photo: @critter.photo }
+      post :create, critter: { breed: @critter.breed, guardian: @critter.guardian, hobbies: @critter.hobbies, name: @critter.name, photo_url: @critter.photo_url }
     end
 
     assert_redirected_to critter_path(assigns(:critter))
@@ -35,7 +35,7 @@ class CrittersControllerTest < ActionController::TestCase
   end
 
   test "should update critter" do
-    patch :update, id: @critter, critter: { breed: @critter.breed, city: @critter.city, guardian: @critter.guardian, hobbies: @critter.hobbies, name: @critter.name, photo: @critter.photo }
+    patch :update, id: @critter, critter: { breed: @critter.breed, guardian: @critter.guardian, hobbies: @critter.hobbies, name: @critter.name, photo_url: @critter.photo_url }
     assert_redirected_to critter_path(assigns(:critter))
   end
 
