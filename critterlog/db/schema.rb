@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515215502) do
+ActiveRecord::Schema.define(version: 20150708132252) do
+
+  create_table "countries", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "critters", force: :cascade do |t|
     t.string   "name"
@@ -23,5 +29,15 @@ ActiveRecord::Schema.define(version: 20150515215502) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "guardians", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.integer  "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "guardians", ["country_id"], name: "index_guardians_on_country_id"
 
 end
