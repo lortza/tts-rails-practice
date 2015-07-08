@@ -1,28 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @critter.name %>
-</p>
+<h1><%= @critter.name %> <span class="critter-type">(<%= @critter.type.name.downcase %>)</span></h1>
+<%= image_tag @critter.photo_url %>
 
 <p>
-  <strong>Type:</strong>
-  <%= @critter.type %>
-</p>
-
-<p>
-  <strong>Owner:</strong>
-  <%= @critter.owner %>
+  <strong>Lives with:</strong>
+  <%= link_to @critter.owner.name, @critter.owner %> in <%= @critter.owner.city %>, <%= @critter.owner.country.name %>
 </p>
 
 <p>
   <strong>Hobby:</strong>
   <%= @critter.hobby %>
-</p>
-
-<p>
-  <strong>Photo url:</strong>
-  <%= @critter.photo_url %>
 </p>
 
 <%= link_to 'Edit', edit_critter_path(@critter) %> |

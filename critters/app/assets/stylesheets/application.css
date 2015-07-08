@@ -17,3 +17,13 @@
  nav {
   border-bottom: 1px solid black;
  }
+
+ .critter-index img {
+  width: 100px;
+  border-radius: 50%;
+ }
+
+ .critter-type {
+  font-size: 60%;
+  font-style: italic;
+ }

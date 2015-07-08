@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @type.name %></h1>
 <p>
-  <strong>Name:</strong>
-  <%= @type.name %>
+  <strong>All <%= @type.name.downcase %>s we've met:</strong>
+  <ul>
+  <% @type.critters.order("name").each do |critter| %>
+  <li> <%= link_to critter.name, critter %> </li>
+  <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_type_path(@type) %> |
