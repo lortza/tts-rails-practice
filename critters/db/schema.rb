@@ -11,13 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708175448) do
+ActiveRecord::Schema.define(version: 20150708175744) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "critters", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "type_id"
+    t.integer  "owner_id"
+    t.text     "hobby"
+    t.string   "photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "critters", ["owner_id"], name: "index_critters_on_owner_id"
+  add_index "critters", ["type_id"], name: "index_critters_on_type_id"
 
   create_table "owners", force: :cascade do |t|
     t.string   "name"

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :critters
   resources :types
   resources :owners
   resources :countries
