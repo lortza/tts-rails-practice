@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708145245) do
+ActiveRecord::Schema.define(version: 20150708160210) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -22,12 +22,11 @@ ActiveRecord::Schema.define(version: 20150708145245) do
   create_table "critters", force: :cascade do |t|
     t.string   "name"
     t.string   "breed"
-    t.string   "city"
     t.text     "hobbies"
-    t.string   "photo"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "guardian_id"
+    t.string   "photo_url"
   end
 
   add_index "critters", ["guardian_id"], name: "index_critters_on_guardian_id"
