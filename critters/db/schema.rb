@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708174733) do
+ActiveRecord::Schema.define(version: 20150708175046) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "owners", force: :cascade do |t|
+    t.string   "name"
+    t.string   "city"
+    t.integer  "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "owners", ["country_id"], name: "index_owners_on_country_id"
 
 end
