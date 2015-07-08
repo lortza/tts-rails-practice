@@ -15,9 +15,9 @@
   <tbody>
     <% @guardians.each do |guardian| %>
       <tr>
-        <td><%= link_to guardian.name %></td>
+        <td><%= link_to guardian.name, guardian %></td>
         <td><%= guardian.city %></td>
-        <td><%= link_to guardian.country.name %></td>
+        <td><%= link_to guardian.country.name, guardian.country %></td>
         <td><%= link_to 'Show', guardian %></td>
         <td><%= link_to 'Edit', edit_guardian_path(guardian) %></td>
         <td><%= link_to 'Destroy', guardian, method: :delete, data: { confirm: 'Are you sure?' } %></td>

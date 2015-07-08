@@ -6,7 +6,7 @@
   <strong>All Residents of <%= @country.name.capitalize %>:</strong>
   <ul>
   <% @country.guardians.order("name").each do |x| %>
-  <li> <%= x.name %> </li>
+  <li> <%= link_to x.name, x %> </li>
   <% end %>
   </ul>
 </p>

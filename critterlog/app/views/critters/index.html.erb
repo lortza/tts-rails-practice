@@ -18,7 +18,7 @@
   <tbody>
     <% @critters.each do |critter| %>
       <tr>
-        <td><%= critter.name %></td>
+        <td><%= link_to critter.name, critter %></td>
         <td><%= critter.breed %></td>
         <td><%= critter.city %></td>
         <td><%= critter.hobbies %></td>
