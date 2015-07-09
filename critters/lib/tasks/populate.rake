@@ -24,7 +24,7 @@ namespace :db do
 
       Owner.populate 3 do |y|
         y.country_id = x.id #assigns owner to country
-        y.name = Faker::Name.name
+        y.name = Faker::Name.first_name
         y.city = Faker::Address.city
 
         Critter.populate 1..3 do |z|

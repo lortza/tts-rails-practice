@@ -14,9 +14,9 @@
   </thead>
 
   <tbody>
-    <% @critters.each do |critter| %>
+    <% @critters.order("name").each do |critter| %>
       <tr>
-        <td class="critter-index"><%= link_to (image_tag critter.photo_url), critter %><p><%= link_to critter.name, critter %></p></td>
+        <td class="critter-index"><p><strong><%= link_to critter.name, critter %></strong></p><p><%= link_to (image_tag critter.photo_url), critter %></p></td>
         <td><%= link_to critter.type.name, critter.type %></td>
         <td>With <%= link_to critter.owner.name, critter.owner %> in <%= critter.owner.city %>, <%= critter.owner.country.name %></td>
         <td><%= critter.hobby %></td>
