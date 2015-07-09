@@ -32,7 +32,7 @@ namespace :db do
           z.owner_id = y.id #assigns critter to owner
           z.name = CRITTER_NAMES.sample
           z.hobby = Faker::Lorem.paragraph
-          z.photo_url = "http://lorempixel.com/400/400/"
+          z.photo_url = "https://www.severnedgevets.co.uk/wp-content/uploads/2014/09/photo-placeholder-pets.png"
 
         end #critter
       end #owner
