@@ -10,6 +10,10 @@ class Location < ActiveRecord::Base
 
   validates :city, inclusion: CITIES
 
+  #filter buttons
+  #scope :@nearby_buses ->
+  #scope :starts_with, -> (name) { where("name like ?", "#{name}%")}
+
   def my_location
     "#{address}, #{city}, #{state.name}"
   end

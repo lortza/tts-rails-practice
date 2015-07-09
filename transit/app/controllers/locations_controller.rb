@@ -21,11 +21,30 @@ class LocationsController < ApplicationController
     # Loop through all buses in system to find those that are close by and put 
     # them in the nearby buses array.
     @nearby_buses = []
+    
     @buses.each do |bus|
       if is_nearby(@location.latitude, @location.longitude, bus['LATITUDE'].to_f, bus['LONGITUDE'].to_f)
         @nearby_buses.push(bus)
+          
       end #if nearby
     end # buses each
+
+    @nearby_northbound = []
+    @nearby_eastbound = []
+    @nearby_southbound = []
+    @nearby_westbound = []
+
+    @nearby_buses.each do |bus|
+      if bus['DIRECTION'].to_s == "Northbound"
+        @nearby_northbound.push(bus)
+      elsif bus['DIRECTION'].to_s == "Eastbound"
+        @nearby_eastbound.push(bus)
+      elsif bus['DIRECTION'].to_s == "Southbound"
+        @nearby_southbound.push(bus)
+      else
+        @nearby_westbound.push(bus)   
+      end #if nearby
+    end # nearby_buses each
 
     @bus_count = @nearby_buses.length
     # TODO:  if no buses, return with notice and redirect to new
