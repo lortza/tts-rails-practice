@@ -13,23 +13,15 @@
 
   <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, class: "form-control"  %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.select :city, Location::CITIES, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :state_id %><br>
-    <%= f.text_field :state_id %>
-  </div>
-  <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
+    <%= f.collection_select :state_id, State.all, :id, :name, :selected => "10", class: "form-control"  %>
   </div>
   <div class="actions">
     <%= f.submit %>

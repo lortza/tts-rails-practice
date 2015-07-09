@@ -1,29 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @location.address %>
-</p>
+<h2>You are currently standing at...</h2>
 
 <p>
-  <strong>City:</strong>
-  <%= @location.city %>
+  <%= @location.my_location %>
 </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @location.state %>
-</p>
+<h2>The closest buses are...</h2>
+<% if @bus_count == 0 %> <!--@bus_count comes from the controller-->
+  <p>...not really that close.  Time to walk, bike, taxi, or Uber.</p>
+<% end %>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @location.latitude %>
-</p>
+<ul>
+<% @nearby_buses.each do |bus| %> <!--@nearby_buses comes from the controller-->
+<li>
+  <strong>Bus <%= bus["ROUTE"] %></strong> (#<%= bus["VEHICLE"] %>)<br>
+  Heading <%= bus["DIRECTION"] %> towards <%= bus["TIMEPOINT"] %>
+</li>
+<% end %>
+</ul>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @location.longitude %>
-</p>
+<%= link_to 'New Search', new_location_path %>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

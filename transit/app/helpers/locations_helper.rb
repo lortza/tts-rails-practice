@@ -10,6 +10,6 @@ module LocationsHelper
   # Compare latitude/longitude of the user and all the buses to see if they are
   # within 0.01 degree
   def is_nearby(lat_user, long_user, lat_bus, long_bus)
-    (long_user - long_bus).abs <= 0.01 && (lat_user - lat_bus).abs <= 0.01
+    (long_user - long_bus).abs <= 0.0095 && (lat_user - lat_bus).abs <= 0.0095
   end #nearby
 end #module
