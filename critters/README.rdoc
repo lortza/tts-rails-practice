@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a practice app using faker and populator to create a list of pets (critter), their humans (owner), and where they live. It uses seeds as well as faker data.
 
-Things you may want to cover:
+* Ruby version 2.2.1
+* Rails version 4.2.1
 
-* Ruby version
+It's currently rooted to the critters index, which displays a table of all of the critters. Each critter and owner name link to their show pages and heach sho page lists any related sub items (owners shows all critters, countries shows all owners, type shows all critters).
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This app currently has no glitches. 
