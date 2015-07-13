@@ -11,15 +11,64 @@
   <p>...not really that close.  Time to walk, bike, taxi, or Uber.</p>
 <% end %>
 
-<ul>
-<% @nearby_buses.each do |bus| %> <!--@nearby_buses comes from the controller-->
-<li>
-  <strong>Bus <%= bus["ROUTE"] %></strong> (#<%= bus["VEHICLE"] %>)<br>
-  Heading <%= bus["DIRECTION"] %> towards <%= bus["TIMEPOINT"] %>
-</li>
-<% end %>
-</ul>
+<div class="row">
+  <div class="direction-block">
+    <h3>Heading North</h3>
+    <ul>
+    <% @nearby_northbound.each do |bus| %> <!--@nearby_buses comes from the controller-->
+    <li>
+      <strong><%= bus["ROUTE"] %></strong> (#<%= bus["VEHICLE"] %>) approaching <%= bus["TIMEPOINT"] %>
+    </li>
+    <% end %>
+    </ul>
+  </div><!--direction-block-->
 
+  <div class="direction-block">
+    <h3>Heading South</h3>
+    <ul>
+    <% @nearby_southbound.each do |bus| %> <!--@nearby_buses comes from the controller-->
+    <li>
+      <strong><%= bus["ROUTE"] %></strong> (#<%= bus["VEHICLE"] %>) approaching <%= bus["TIMEPOINT"] %>
+    </li>
+    <% end %>
+    </ul>
+  </div><!--direction-block-->
+
+  <div class="direction-block">
+    <h3>Heading East</h3>
+    <ul>
+    <% @nearby_eastbound.each do |bus| %> <!--@nearby_buses comes from the controller-->
+    <li>
+      <strong><%= bus["ROUTE"] %></strong> (#<%= bus["VEHICLE"] %>) approaching <%= bus["TIMEPOINT"] %>
+    </li>
+    <% end %>
+    </ul>
+  </div><!--direction-block-->
+
+  <div class="direction-block">
+    <h3>Heading West</h3>
+    <ul>
+    <% @nearby_westbound.each do |bus| %> <!--@nearby_buses comes from the controller-->
+    <li>
+      <strong><%= bus["ROUTE"] %></strong> (#<%= bus["VEHICLE"] %>) approaching <%= bus["TIMEPOINT"] %>
+    </li>
+    <% end %>
+    </ul>
+  </div><!--direction-block-->
+</div><!--row-->
+
+<div class="row">
+<h3>All Nearby Buses</h3>
+  <hr>
+  <ul>
+  <% @nearby_buses.each do |bus| %> <!--@nearby_buses comes from the controller-->
+  <li>
+    <strong>Bus <%= bus["ROUTE"] %></strong> (#<%= bus["VEHICLE"] %>)<br>
+    Heading <%= bus["DIRECTION"] %> towards <%= bus["TIMEPOINT"] %>
+  </li>
+  <% end %>
+  </ul>
+</div><!--row-->
 <%= link_to 'New Search', new_location_path %>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |

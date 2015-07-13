@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ /* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; } *,
+  *:before,*:after {
+  box-sizing: inherit; }
+
+.row {
+  clear: both;
+  margin: 10px 0px;
+}
+ .direction-block {
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 0% 2% 2% 2%;
+  margin: 1%;
+  float: left;
+  height: 200px;
+  overflow: scroll;
+ }
