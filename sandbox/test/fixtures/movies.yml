@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  poster: MyString
+  plot: MyText
+  rating: 1.5
+  watchstatus: false
+  genre: MyString
+
+two:
+  title: MyString
+  poster: MyString
+  plot: MyText
+  rating: 1.5
+  watchstatus: false
+  genre: MyString
